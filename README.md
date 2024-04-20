@@ -55,11 +55,11 @@ make flash
 
 If you want to just upload the pre-compiled binary, run the following command instead:
 ```
-python3 ./tools/chprog.py pd_test.bin
+python3 ./tools/chprog.py adapter.bin
 ```
 
 ## Uploading Firmware Binary (Windows)
-WCH offers the free but closed-source software [WCHISPTool](https://www.wch.cn/downloads/WCHISPTool_Setup_exe.html) to upload firmware with Windows via the USB bootloader. Press the BOOT button and keep it pressed while connecting the board to the USB port of your PC. Release the BOOT button, open the pd_test.hex file in WCHISPTool and upload it to the microcontroller.
+WCH offers the free but closed-source software [WCHISPTool](https://www.wch.cn/downloads/WCHISPTool_Setup_exe.html) to upload firmware with Windows via the USB bootloader. Press the BOOT button and keep it pressed while connecting the board to the USB port of your PC. Release the BOOT button, open the adapter.hex file in WCHISPTool and upload it to the microcontroller.
 
 # Operating Instructions
 1. Connect the USB PD Adapter to a USB Type-C PD power supply using a USB-C cable.
@@ -67,7 +67,7 @@ WCH offers the free but closed-source software [WCHISPTool](https://www.wch.cn/d
 3. Connect the device to the power consumer via the output screw terminal.
 4. Use the RST button to clear the energy counter.
 
-![USB_PD_Adapter_operation.jpg](https://raw.githubusercontent.com/wagiminator/CH32X035-USB-PD-Adapter/main/documentation/USB_PD_Adapter_operation.jpg)
+![USB_PD_Adapter_operation.png](https://raw.githubusercontent.com/wagiminator/CH32X035-USB-PD-Adapter/main/documentation/USB_PD_Adapter_operation.png)
 
 # References, Links and Notes
 - [EasyEDA Design Files](https://oshwlab.com/wagiminator)
