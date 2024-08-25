@@ -25,6 +25,11 @@ The HT7533-1 provides a stable 3.3V supply to all components of the circuit. Ens
 ## SSD1306 OLED Display Module
 A low-cost SSD1306 4-pin I2C 128x32 pixels 0.91-inch OLED module is used as the display device. Make sure to acquire one with the correct pinout!
 
+## Building Instructions
+1. Take the Gerber files (the *zip* file inside the *hardware* folder) and upload them to a PCB (printed circuit board) manufacturer of your choice (e.g., [JLCPCB](https://jlcpcb.com/)). They will use these files to create the circuit board for your device and send it to you.
+2. Once you have the PCB, you can start soldering the components onto it. Use the BOM (bill of materials) and schematic as a guide to make sure everything is connected correctly. You can find the corresponding files in the *hardware* folder. Remove the plastic part from the pin header of the OLED, trim the pins, and solder the OLED module flush onto the PCB.
+3. Upload the firmware by following the instructions in the next section (see below).
+
 ![USB_PD_Adapter_pic2.jpg](https://raw.githubusercontent.com/wagiminator/CH32X035-USB-PD-Adapter/main/documentation/USB_PD_Adapter_pic2.jpg)
 
 # Software
@@ -55,11 +60,6 @@ pip install chprog
 Open a terminal and navigate to the folder with the *makefile*. Press the BOOT button and keep it pressed while connecting the board to the USB port of your PC. Run the following command to compile and upload:
 ```
 make flash
-```
-
-If you want to just upload the pre-compiled binary, run the following command instead:
-```
-chprog bin/pd_adapter.bin
 ```
 
 ### Other Operating Systems
