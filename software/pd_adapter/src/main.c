@@ -1,6 +1,6 @@
 // ===================================================================================
 // Project:   USB PD Adapter for CH32X035
-// Version:   v1.0
+// Version:   v1.1
 // Year:      2024
 // Author:    Stefan Wagner
 // Github:    https://github.com/wagiminator
