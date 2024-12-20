@@ -1,6 +1,6 @@
 // ===================================================================================
 // Project:   USB PD Adapter for CH32X035
-// Version:   v1.1
+// Version:   v1.2
 // Year:      2024
 // Author:    Stefan Wagner
 // Github:    https://github.com/wagiminator
@@ -66,6 +66,7 @@ int main(void) {
   uint16_t setvolt = 5000;                        // selected volatge
   uint8_t keydelay;                               // key repeat delay
   uint8_t incdecpressed = 0;                      // INC/DEC key pressed flag
+  uint8_t refreshcounter;                         // PD negotiation refresh counter
   uint8_t i;
 
   // Setup button pins
@@ -181,6 +182,7 @@ int main(void) {
     if(incdecpressed) {
       while((i--) && ((!PIN_read(PIN_INC)) | (!PIN_read(PIN_DEC)))) DLY_ms(10);
       incdecpressed = 0;
+      if(!--refreshcounter) PD_negotiate();
     }
     else {
       keydelay = 50;
