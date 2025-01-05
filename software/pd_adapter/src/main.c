@@ -1,6 +1,6 @@
 // ===================================================================================
 // Project:   USB PD Adapter for CH32X035
-// Version:   v1.2
+// Version:   v1.3
 // Year:      2024
 // Author:    Stefan Wagner
 // Github:    https://github.com/wagiminator
@@ -74,9 +74,10 @@ int main(void) {
   PIN_input_PU(PIN_DEC);
   PIN_input_PU(PIN_INC);
 
-  // Setup milis and I2C devices
+  // Setup millis and I2C devices
   MIL_init();                                     // setup millis counter
   I2C_init();                                     // setup I2C
+  DLY_ms(50);                                     // give I2C slaves time to boot up
   INA_init();                                     // setup INA219
   OLED_init();                                    // setup OLED
 
